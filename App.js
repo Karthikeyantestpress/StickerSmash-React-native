@@ -9,6 +9,8 @@ import IconButton from './components/IconButton';
 import EmojiPicker from "./components/EmojiPicker";
 import EmojiList from './components/EmojiList';
 import EmojiSticker from './components/EmojiSticker';
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 
 
 export default function App() {
@@ -49,6 +51,7 @@ export default function App() {
   };
 
   return (
+    <GestureHandlerRootView style={styles.container}>
     <View style={styles.container}>
         <View style={styles.imageContainer}>
         <ImageViewer selectedImage={selectedImage} />
@@ -73,6 +76,7 @@ export default function App() {
       </EmojiPicker>
         <StatusBar style="auto" />
     </View>
+    </GestureHandlerRootView>
   );
 }
 
