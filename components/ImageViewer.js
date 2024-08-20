@@ -2,9 +2,10 @@ import { StyleSheet, Image } from 'react-native';
 
 const PlaceholderImage = require('../assets/images/background-image.png')
 
-export default function ImageViewer() {
+export default function ImageViewer({ selectedImage }) {
+  const imageSource = selectedImage  ? { uri: selectedImage } : PlaceholderImage;
   return (
-    <Image source={PlaceholderImage} style={styles.image} />
+    <Image source={imageSource} style={styles.image} />
   );
 }
 
